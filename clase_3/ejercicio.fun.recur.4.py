@@ -11,11 +11,21 @@ La sucesión de Fibonacci comienza con los números 0 y 1, y cada número subsec
 En donde:
 número: el número ingresado por el usuario mediante consola, utilizando nuestra función get_int(mensaje,mensaje_error,mínimo,máximo,reintentos)
 '''
-from Package_Aritmeticas.funciones_4 import *
 
-def calcular_fibonacci(numero: int)-> int:
-    if numero == 0 or numero == 1:
-        return 1
+def calcular_fibonacci(numero: int) -> int:
+    if numero == 0:
+        resultado = 0
+    elif numero == 1:
+        resultado = 1
     else:
-        return calcular_fibonacci(numero -1) + calcular_fibonacci (numero -2)
+        resultado = calcular_fibonacci(numero - 1) + calcular_fibonacci(numero - 2)
+        
+    return resultado
+    
+resultado = calcular_fibonacci(8)
+print(resultado)
+
+#0+1=1+2=3+5=8=13=21=34=55=
+
+
     
