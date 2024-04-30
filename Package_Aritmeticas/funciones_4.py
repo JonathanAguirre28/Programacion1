@@ -2,15 +2,15 @@
 Alumno: Jonathan Adrian Aguirre.
 Especializar las funciones del punto 1, 2 y 3 para hacerlas reutilizables. Agregar validaciones.'''
 
-def ingresar_numero_entero():
+def get_int(mensaje:str, mensaje_error: str, minimo: int, maximo:int):
     while True:
-        numero = input("Ingrese un número entero: ")
+        numero = input(mensaje)
         if numero.lstrip('-').isdigit():
             return int(numero)
         else:
             print(f"Error: {numero} no es un numero entero, por favor, ingrese un número entero")
 
-print("El número ingresado es:", ingresar_numero_entero())
+print("El número ingresado es:", get_int())
 
 
 def ingresar_numero_flotante():

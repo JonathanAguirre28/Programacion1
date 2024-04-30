@@ -1,20 +1,16 @@
-from Validate import *
-
-def get_int(mensaje:str, mensaje_error: str, minimo: int, maximo:int, reintentos: int) -> int|None:
+def get_int(mensaje:str, mensaje_error: str, minimo: int, maximo:int) -> int|None:
     contador_reintentos = 0
     numero = input(mensaje)
     numero = int(numero)
     
-    while numero < minimo or numero > maximo and contador_reintentos < reintentos:
+    while numero < minimo or numero > maximo and contador_reintentos:
         contador_reintentos += 1
-        numero = int(input(f"{mensaje_error} tiene {reintentos} reintentos, {mensaje}"))
+        numero = int(input(f"{mensaje_error}, {mensaje}"))
         numero = int(numero)
-        if reintentos == contador_reintentos:
-            return None
 
     return numero 
 
-numero_int = get_int("Ingrese un numero entero mayor a 20 y menor a 40: ", "Reingrese un numero", 20, 40, 3)
+numero_int = get_int("Ingrese un numero entero mayor a 20 y menor a 40: ", "Reingrese un numero", 20, 40)
 print(numero_int)
 
 def get_float(mensaje:str, mensaje_error: str, minimo: int, maximo:int, reintentos: float) -> float|None:
